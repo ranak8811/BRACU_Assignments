@@ -1,0 +1,7 @@
+ids: 4 Mark: 50
+ids: 9 Mark: 50
+ids: 7 Mark: 40
+ids: 3 Mark: 20
+ids: 1 Mark: 10
+ids: 2 Mark: 10
+ids: 5 Mark: 10
