@@ -1,0 +1,119 @@
+﻿CSE370 : Database Systems Lab Mid | Spring 2024
+Answer Sheet
+ID : 22101710 | Name : Md. Anwar Hossain
+
+
+No 1 Query
+(as Plain Text)
+	CREATE DATABASE DCBattles_22101710;
+
+
+	No 1 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 2 Query
+(as Plain Text)
+	USE DCBattles_22101710;
+	No 2 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 3 Query
+(as Plain Text)
+	select h.name, v.name, b.battle_date, b.battle_location from heroes h, villains v, battles b where h.hero_id=b.hero_id and v.villain_id=b.villain_id and b.hero_points<b.villain_points;
+
+
+
+
+	No 3 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 4 Query
+(as Plain Text)
+	select h.name, count(b.hero_id) as total_battles from heroes h join battles b on h.hero_id=b.hero_id group by h.name;
+
+
+
+
+	No 4 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 5 Query
+(as Plain Text)
+	select distinct h.name, v.name from heroes h join battles b on h.hero_id = b.hero_id join villains v on b.villain_id = v.villain_id where b.battle_location like '%City%';
+	No 5 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 6 Query
+(as Plain Text)
+	select v.name from villains v join battles b on v.villain_id = b.villain_id group by v.name having count(b.villain_id) > 1;
+	No 6 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 7 Query
+(as Plain Text)
+	select h.name from heroes h join battles b on h.hero_id = b.hero_id order by b.hero_points desc limit 1;
+	No 7 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 8 Query
+(as Plain Text)
+	select * from battles where (hero_points > any (select villain_points from battles b2 where battles.battle_location = b2.battle_location));
+
+
+
+
+	No 8 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 9 Query
+(as Plain Text)
+	select distinct (select battle_location from battles group by battle_location order by count(*) desc limit 1) as Max_Battles;
+	No 9 SS
+(of Query & Output
+in Shell)
+	  
+
+	
+
+	No 10 Query
+(as Plain Text)
+	select distinct battle_date, (select name from heroes where hero_id = b1.hero_id) as hero, (select name from villains where villain_id = b1.villain_id) as villain from battles b1 where exists (select 1 from battles b2 where b1.hero_id = b2.hero_id and b1.battle_date != b2.battle_date);
+
+
+
+
+	No 10 SS
+(of Query & Output
+in Shell)
