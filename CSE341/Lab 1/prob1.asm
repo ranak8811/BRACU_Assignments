@@ -6,7 +6,7 @@
 
 A DB 5
 B DB 3
-               ;
+               ; How to show value/output in the terminal❓
 .CODE
 
 MAIN PROC
