@@ -10,7 +10,7 @@ B DW 0AFh    ; Use 'h' to indicate that the value is hexadecimal
 .CODE
 
 MAIN PROC
-    MOV AX, @DATA
+    MOV AX, @DATA            ;How to check this code is correct or not❓
     MOV DS, AX
                
     MOV AX, A             
