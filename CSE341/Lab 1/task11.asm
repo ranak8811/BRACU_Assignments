@@ -7,6 +7,8 @@
 
 .CODE
                  ;(1 + 2) * (3 - 1) / 5 + 3 + 2 - (1 * 2)
+
+                 ; aitar jhamela ase❓
 MAIN PROC
     
   MOV AX, @DATA
