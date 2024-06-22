@@ -1,0 +1,90 @@
+TASK 1:
+
+org 100h
+
+; add your code here
+
+.data
+A DB ?
+
+.code
+MOV AH, 1
+INT 21H
+
+SUB AL, '0'
+
+MUL 10
+MOV BL, AL
+
+
+MOV AH, 1
+INT 21H
+
+SUB AL, '0'
+
+MOV CL, AL
+
+ADD BL, CL 
+
+MOV AH, 1
+INT 21H
+
+SUB AL, '0'
+
+MUL 10
+MOV CL, AL
+
+
+MOV AH, 1
+INT 21H
+
+SUB CH, '0'
+
+MOV CH, AL
+
+ADD CL, CH
+
+MOV AL, CL
+
+
+
+MUL BL
+
+
+
+ret
+
+
+
+
+
+
+
+TASK 2:
+
+org 100h
+
+; add your code here
+
+.DATA
+
+.CODE
+
+MOV AH, 1
+INT 21H
+MOV BL, AL
+
+
+MOV AH, 1
+INT 21H
+MOV CL, AL
+SUB CL, '0'
+
+ADD BL, CL
+
+MOV AH, 2
+MOV DL, BL
+INT 21H
+
+
+ret
