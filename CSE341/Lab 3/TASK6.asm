@@ -1,0 +1,25 @@
+ORG 100H
+
+.DATA
+
+.CODE
+
+MOV AH, 1
+INT 21H
+MOV BL, AL
+
+CMP BL, 'Y'
+JE PRY
+
+CMP BL, 'y'
+JE PRY
+
+JMP END
+
+PRY:
+MOV AH, 2
+MOV DL, BL
+INT 21H
+
+END:
+RET

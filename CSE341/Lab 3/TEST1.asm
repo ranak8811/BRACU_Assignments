@@ -1,0 +1,27 @@
+org 100h
+
+MOV AX, -1
+
+CMP AX, 0
+
+JG POSITIVE
+JL NEGATIVE
+
+;AX = 0
+MOV BX, 0
+JMP END
+
+POSITIVE:
+MOV AX, 1
+JMP END
+
+NEGATIVE:
+MOV BX, -1
+JMP END
+
+END:
+ret
+
+
+
+
