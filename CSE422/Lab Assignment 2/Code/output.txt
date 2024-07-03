@@ -1,0 +1,2 @@
+Best Schedule: 010001100
+Fitness Value: 0
