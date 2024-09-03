@@ -1,0 +1,9 @@
+ORG 100H
+
+.DATA
+
+.CODE
+
+MOV AH, 2
+MOV DX, 254
+INT 21H
