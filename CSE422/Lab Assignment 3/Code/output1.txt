@@ -1,0 +1,1 @@
+The new minimax value is 5. Pacman goes right and uses dark magic
