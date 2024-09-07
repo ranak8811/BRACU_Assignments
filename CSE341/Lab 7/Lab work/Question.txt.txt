@@ -1,0 +1,7 @@
+Consider the following assembly language program designed to process and display information about five single-digit numeric inputs from the user:
+
+getInput PROC - Reads five single-digit values from the user and stores them in an array named values.
+findAvg PROC - Calculates the average of the five values in the values array.
+findLargest PROC - Identifies the largest value among the five values in the values array.
+findSmallest PROC - Identifies the smallest value among the five values in the values array.
+printOutput PROC - Outputs the average, largest, and smallest values with appropriate labels.
