@@ -1,0 +1,81 @@
+﻿================ Configuration of Router 1  ================
+
+
+enable
+erase startup-config
+reload
+conf t
+
+
+hostname R1
+no ip domain-lookup
+enable secret class
+banner motd & USER AUTH ONLY &
+
+
+line console 0
+  password cisco
+  login
+  exit
+
+
+line vty 0 4
+  password cisco
+  login
+  exit
+
+
+interface serial 0/0/0
+  ip address 192.168.2.1 255.255.255.0
+  clock rate 64000
+  no shutdown
+
+
+interface fastethernet 0/0
+  ip address 192.168.1.1 255.255.255.0
+  no shutdown
+
+
+end
+copy run start
+
+
+================ Configuration of Router 2  ================
+
+
+enable
+erase startup-config
+reload
+conf t
+
+
+hostname R2
+no ip domain-lookup
+enable secret class
+
+
+banner motd & USER AUTH ONLY &
+line console 0
+  password cisco
+  login
+  exit
+
+
+line vty 0 4
+  password cisco
+  login
+  exit
+
+
+interface fastethernet 0/0
+  ip address 192.168.3.1 255.255.255.0
+  no shutdown
+
+
+interface serial 0/0/0
+  ip address 192.168.2.2 255.255.255.0
+  no shutdown
+
+
+end
+copy run start
