@@ -1,0 +1,10 @@
+﻿For part 1:
+R1 configure (step-1):
+
+
+en
+conf t
+
+
+R1(config)#int g0/0
+R1(config-if)#ip helper-address 192.168.60.253

@@ -1,0 +1,84 @@
+﻿For part 1:
+R2 configure (step-1):
+
+
+en
+config t
+R2(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.10
+R2(config)#ip dhcp excluded-address 192.168.30.1 192.168.30.10
+
+
+
+
+(step-2):
+
+
+R2(config)#ip dhcp pool R1-LAN
+R2(dhcp-config)#network 192.168.10.0 255.255.255.0
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#default-router 192.168.10.1
+
+
+(step-3):
+
+
+R2(config)#ip dhcp pool R3-LAN
+R2(dhcp-config)#network 192.168.30.0 255.255.255.0
+R2(dhcp-config)#dns-server 192.168.20.254
+R2(dhcp-config)#default-router 192.168.30.1
+R2(dhcp-config)#exit
+
+
+
+
+For part 2:
+R1 configure (step-1):
+
+
+en
+config t
+R1(config)#int g0/0
+R1(config-if)#ip helper-address 10.1.1.2
+
+
+R3 configure
+
+
+R3(config)#int g0/0
+R3(config-if)#ip helper-address 10.2.2.2
+
+
+
+
+For part 3:
+
+
+R2(config)#int g0/1
+R2(config-if)#ip address dhcp
+R2(config-if)#no shut
+R2(config-if)#exit
+R2(config)#exit
+R2#show ip int brief
+
+
+
+
+For part 4:
+R2 configure (step-1):
+
+
+R2#show ip dhcp binding
+ 
+IP address             Client-ID/                    Lease expiration            Type
+                                     Hardware address
+192.168.10.11       0002.4AA5.1470                 -                          Automatic
+192.168.30.11       0004.9A97.2535                 -                          Automatic
+
+
+
+
+(step-2):
+
+
+ping 192.168.30.11
+ping 192.168.10.11
